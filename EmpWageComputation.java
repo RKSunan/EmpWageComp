@@ -1,7 +1,6 @@
 import java.util.Random;
 class EmpWageComputation{
-public static void main(String args[]) {
-System.out.println("Day   Wage   TotalWage Totalhour");
+public static void compwage() {
 double sum=0;
 int hour=0;
 int totalhour[]=new int[20];
@@ -19,7 +18,7 @@ totalwage[i]=sum + emp_wage;
 sum=totalwage[i];
 totalhour[i]=8+hour;
 hour=totalhour[i];
-System.out.println(  i  + "   "   + emp_wage+"      "+totalwage[i] +"     "+ totalhour[i]);
+System.out.println(  i  + "   "   + emp_wage+"    "+totalwage[i] +"     "+ totalhour[i]);
 }
 else{
 float emp_wage = 20*4;
@@ -38,6 +37,9 @@ System.out.println(i + "      " + 0 +"    " + totalwage[i]+"     "+ totalhour[i]
 }
 System.out.println ("The month wage of the employee is "+ sum );
 System.out.println ("The total working hours of the employee is "+ hour );
-
+}
+public static void main(String args[]) {
+System.out.println("Day   Wage   TotalWage Totalhour");
+compwage();
 }
 }
