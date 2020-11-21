@@ -1,12 +1,13 @@
-import java.util.Random;
+import java.util.*;  
 interface Employee{
 public void compwage();
+//public ArrayList<Employee> emp=new ArrayList<Employee>();
 }
 class EmpComputation implements Employee{
-int wage;
+double wage;
 int wh;
 int wd;
-EmpComputation(int wage, int wh, int wd){
+EmpComputation(double wage, int wh, int wd){
 this.wage=wage;
 this.wh=wh;
 this.wd=wd;
@@ -17,10 +18,13 @@ this.wd=wd;
 public  void compwage() {
 double sum=0;
 int hour=0;
+//double sum=0;
+//ArrayList<Double> totalhour = new ArrayList<Double>();
 int totalhour[]=new int[30];
+//ArrayList<Double> totalwage = new ArrayList<Double>();
 double totalwage[]=new double[30];
 System.out.println("Day \t Wage \tTotalWage \tTotalhour");
-for (int i=1;i<=this.wd;i++){
+for (int i=1;i<this.wd;i++){
 Random rand = new Random();
 int attend =  rand.nextInt(2);
 switch(attend){
@@ -46,22 +50,27 @@ break;
 case 0:
 totalwage[i]=sum;
 totalhour[i]=hour;
-System.out.println(i + "      " + 0 +"            " + totalwage[i]+"       "+ totalhour[i]);
+System.out.println(i + "      " + 0 +"            " +totalwage[i]+"       "+ totalhour[i]);
 }
 }
 System.out.println ("The month wage of the employee is "+ sum );
-System.out.println ("The total working hours of the employee is"+ hour );
+System.out.println ("The total working hours of the employee is "+ hour+"\n" );
 }
 }
 class EmpWageComputation{
 public static void main(String args[] ) 
 {
 //System.out.println("Day \t Wage \tTotalWage \tTotalhour");
+ArrayList<EmpComputation> emp=new ArrayList<EmpComputation>();
 EmpComputation comp1=new EmpComputation(25,8,25);
 EmpComputation comp2=new EmpComputation(30,7,20);
-System.out.println("Details of First Comapany: \n");
-comp1.compwage();
-System.out.println("Details of second Company:\n");
-comp2.compwage();
+emp.add(comp1);
+emp.add(comp2);
+for ( EmpComputation epl: emp)
+{
+System.out.println("Details of the employee:\n"); 
+           epl.compwage();
 }
 }
+}
+
