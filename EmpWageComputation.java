@@ -1,7 +1,6 @@
 import java.util.*;  
 interface Employee{
 public void compwage();
-//public ArrayList<Employee> emp=new ArrayList<Employee>();
 }
 class EmpComputation implements Employee{
 double wage;
@@ -12,16 +11,10 @@ this.wage=wage;
 this.wh=wh;
 this.wd=wd;
 }
-//public void compwage();
-//}
-//class EmpComputation implements Employee{
 public  void compwage() {
 double sum=0;
 int hour=0;
-//double sum=0;
-//ArrayList<Double> totalhour = new ArrayList<Double>();
 int totalhour[]=new int[30];
-//ArrayList<Double> totalwage = new ArrayList<Double>();
 double totalwage[]=new double[30];
 System.out.println("Day \t Wage \tTotalWage \tTotalhour");
 for (int i=1;i<this.wd;i++){
@@ -53,14 +46,13 @@ totalhour[i]=hour;
 System.out.println(i + "      " + 0 +"            " +totalwage[i]+"       "+ totalhour[i]);
 }
 }
-System.out.println ("The month wage of the employee is "+ sum );
-System.out.println ("The total working hours of the employee is "+ hour+"\n" );
+System.out.println ("The month wage of the employee is "+ sum +"\n");
+//System.out.println ("The total working hours of the employee is "+ hour+"\n" );
 }
 }
 class EmpWageComputation{
 public static void main(String args[] ) 
 {
-//System.out.println("Day \t Wage \tTotalWage \tTotalhour");
 ArrayList<EmpComputation> emp=new ArrayList<EmpComputation>();
 EmpComputation comp1=new EmpComputation(25,8,25);
 EmpComputation comp2=new EmpComputation(30,7,20);
@@ -69,7 +61,8 @@ emp.add(comp2);
 for ( EmpComputation epl: emp)
 {
 System.out.println("Details of the employee:\n"); 
-           epl.compwage();
+System.out.println("The Daily wage:"+epl.wage+"\n");  
+         epl.compwage();
 }
 }
 }
