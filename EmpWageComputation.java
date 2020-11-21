@@ -38,7 +38,8 @@ System.out.println(i + "      " + 0 +"            " + totalwage[i]+"       "+ to
 System.out.println ("The month wage of the employee is "+ sum );
 System.out.println ("The total working hours of the employee is "+ hour );
 }
-public static void main(String args[]) {
+public static void main(String args[]) 
+{
 System.out.println("Day \t Wage \tTotalWage \tTotalhour");
 EmpWageComputation comp1=new EmpWageComputation();
 comp1.compwage(30,10,23);
