@@ -1,13 +1,19 @@
 import java.util.Random;
-class EmpWageComputation{
+interface Employee{
+public void compwage();
+}
+class EmpComputation implements Employee{
 int wage;
 int wh;
 int wd;
-EmpWageComputation(int wage, int wh, int wd){
+EmpComputation(int wage, int wh, int wd){
 this.wage=wage;
 this.wh=wh;
 this.wd=wd;
 }
+//public void compwage();
+//}
+//class EmpComputation implements Employee{
 public  void compwage() {
 double sum=0;
 int hour=0;
@@ -44,13 +50,15 @@ System.out.println(i + "      " + 0 +"            " + totalwage[i]+"       "+ to
 }
 }
 System.out.println ("The month wage of the employee is "+ sum );
-System.out.println ("The total working hours of the employee is \n"+ hour );
+System.out.println ("The total working hours of the employee is"+ hour );
 }
+}
+class EmpWageComputation{
 public static void main(String args[] ) 
 {
 //System.out.println("Day \t Wage \tTotalWage \tTotalhour");
-EmpWageComputation comp1=new EmpWageComputation(25,8,25);
-EmpWageComputation comp2=new EmpWageComputation(30,7,20);
+EmpComputation comp1=new EmpComputation(25,8,25);
+EmpComputation comp2=new EmpComputation(30,7,20);
 System.out.println("Details of First Comapany: \n");
 comp1.compwage();
 System.out.println("Details of second Company:\n");
