@@ -1,7 +1,6 @@
 import java.util.*;  
 interface Employee{
 public void compwage();
-//public ArrayList<Employee> emp=new ArrayList<Employee>();
 }
 class EmpComputation implements Employee{
 double wage;
